@@ -1,26 +1,18 @@
 package domain;
 
-public class Curso {
-    private String titulo;
-    private String descricao;
+public class Curso extends Conteudo{
     private int cargaHoraria;
+
+    
+    @Override
+    public double calcularXP() {
+        return XP_PADRAO * cargaHoraria;
+       
+    } 
 
     public Curso() {
     }
-
-
-    public String getTitulo() {
-        return titulo;
-    }
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-    public String getDescricao() {
-        return descricao;
-    }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+   
     public int getCargaHoraria() {
         return cargaHoraria;
     }
@@ -29,7 +21,7 @@ public class Curso {
     }
     @Override
     public String toString() {
-        return "Curso [cargaHoraria=" + cargaHoraria + ", descricao=" + descricao + ", titulo=" + titulo + "]";
-    } 
+        return "Curso [cargaHoraria=" + cargaHoraria + ", descricao=" + getDescricao() + ", titulo=" + getTitulo() + "]";
+    }
 
 }
